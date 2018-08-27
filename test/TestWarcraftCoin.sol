@@ -23,6 +23,8 @@ contract TestWarcraftCoin{
 
         Assert.equal(got, expected, "Not the right quantity");
     }
+// removed these tests because the function is internal for security reasons
+/*
     function testBalanceBeforeGiving() public{
         address a = address(warcraftCoin);
         uint expected = 0;
@@ -46,6 +48,6 @@ contract TestWarcraftCoin{
         uint got = warcraftCoin.getBalanceOf(this);
 
         Assert.equal(got, expected, "Not the right quantity");
-    }
+    }*/
 
 }

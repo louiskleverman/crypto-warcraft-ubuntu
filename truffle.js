@@ -14,7 +14,7 @@ module.exports = {
       port: 7545,     // Ganache software
       network_id: "*", // Match any network id
       
-      gas: 6000000 // Gas limit used for deploys
+      //gas: 6000000 // Gas limit used for deploys
     }
   }
 };

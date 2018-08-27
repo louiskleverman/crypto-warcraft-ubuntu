@@ -1,0 +1,113 @@
+.displayAccount{
+    margin-top:20px;
+    margin-bottom:20px;
+    background-color: rgb(243, 243, 243);
+
+    padding:20px;
+    padding-top:30px;
+    font-family: liteCraft;
+    font-size:1.5em;
+    border:2px solid rgb(30,30,30);
+
+    background-image: url(../images/pattern3.jpg);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    color:rgb(236, 236, 236);
+    border-radius:10px;
+    position:relative;
+}
+.userBalance{
+    position:absolute;
+    top:10px;
+    left:15px;
+    color:rgb(226, 210, 66);
+}
+.charInfo .timer{
+    position:absolute;
+    top:-45px;
+    right:15px;
+    color:rgb(226, 210, 66);
+}
+
+
+.charList{
+    padding:10px;
+    border:1px solid rgb(172, 172, 172);
+    border-radius: 10px;
+    margin-bottom:15px;
+}
+.character{
+    padding:10px;
+    border-bottom:1px solid rgb(201, 201, 201)  ;
+}
+.selected{
+    background-color: rgb(226, 210, 66);
+}
+
+
+.charInfo{
+    border-bottom:1px solid rgb(206, 206, 206);
+    padding:10px;
+}
+
+.factionImg{
+    height:80px;
+    width:auto;
+}
+
+.charImage{
+    height:120px;
+    width:auto;
+}
+
+.character-part-1{
+    display:inline-block;
+}
+
+.character-part-1,.character-part-2{
+    margin:10px 20px;
+}
+.character-part-2{
+    margin-top:10px;
+}
+
+
+.charInfo{
+    position:relative;
+}
+.charInfoName{
+    font-size:40px;
+    font-family:liteCraft;
+    color:rgb(226, 210, 66);
+}
+
+.characterImage{
+    position:relative;
+}
+.classImage{
+    position:absolute;
+    height:50px;
+    width:auto;
+    bottom:0;
+    left:-5px;
+}
+
+@media screen and (max-width: 991px) {
+    
+    .displayAccount{
+        padding:10px;
+    }
+    .charInfo{
+        padding:0px;
+    }
+    .charInfoName{
+        font-size:30px;
+    }
+    .character-part-2{
+        float:left;
+    }
+    .factionImg{
+        height:60px;
+    }
+}

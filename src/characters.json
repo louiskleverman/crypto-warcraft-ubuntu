@@ -1,0 +1,46 @@
+[
+  [
+    [
+      {
+        "name" : "male human",
+        "image" : "human_male.png"
+      },
+      {
+        "name" : "female human",
+        "image" : "human_female.png"
+      }
+    ],
+    [
+      {
+        "name" : "male night elf",
+        "image" : "nightelf_male.png"
+      },
+      {
+        "name" : "female night elf",
+        "image" : "nightelf_female.png"
+      }
+    ]
+  ],
+  [
+    [
+      {
+        "name" : "male orc",
+        "image" : "orc_male.png"
+      },
+      {
+        "name" : "female orc",
+        "image" : "orc_female.png"
+      }
+    ],
+    [
+      {
+        "name" : "male blood elf",
+        "image" : "bloodelf_male.png"
+      },
+      {
+        "name" : "female blood elf",
+        "image" : "bloodelf_female.png"
+      }
+    ]
+  ]
+]

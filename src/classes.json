@@ -1,0 +1,43 @@
+[
+    {
+        "name":"Warrior",
+        "image":"warrior.png"
+    },
+    {
+        "name":"Mage",
+        "image":"mage.png"
+    },
+    {
+        "name":"Rogue",
+        "image":"rogue.png"
+    },
+    {
+        "name":"Paladin",
+        "image":"paladin.png"
+    },
+    {
+        "name":"Hunter",
+        "image":"hunter.png"
+    },
+    {
+        "name":"Priest",
+        "image":"priest.png"
+    },
+    {
+        "name":"Shaman",
+        "image":"shaman.png"
+    },
+    {
+        "name":"Warlock",
+        "image":"warlock.png"
+    },
+    {
+        "name":"Death knight",
+        "image":"deathknight.png"
+    },
+    {
+        "name":"Druid",
+        "image":"druid.png"
+    }
+  ]
+  

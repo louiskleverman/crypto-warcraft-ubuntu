@@ -1,0 +1,64 @@
+.modal-body{
+    padding:0;
+}
+
+.modal-body .createCharacter{
+    margin:2px;
+}
+
+.information{
+    position:relative;
+}
+.information .information-image{
+    top:0;
+    width:100%;
+    height:auto;
+    z-index:600;
+}
+.information .information-text{
+    position:absolute;
+    top:50%;
+    width:100%;
+    text-align: center;
+    font-family: liteCraft;
+    z-index:700;
+    font-size:30px;
+    color:rgb(226, 210, 66);
+}
+.information .information-backgroundimage{
+    position:absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+/* Transaction modal */
+
+
+.transactionModal{
+    position:relative;
+}
+.transactionModal .transactionModal-image{
+    top:0;
+    width:100%;
+    height:auto;
+    z-index:600;
+}
+.transactionModal .transactionModal-text{
+    position:absolute;
+    top:50%;
+    width:100%;
+    text-align: center;
+    font-family: liteCraft;
+    z-index:700;
+    font-size:30px;
+    color:rgb(226, 210, 66);
+}
+.transactionModal .transactionModal-backgroundimage{
+    position:absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}

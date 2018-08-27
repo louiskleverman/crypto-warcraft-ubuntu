@@ -1,0 +1,88 @@
+.questMap{
+    position:relative;
+}
+
+.questMap img{
+    width:100%;
+    height:auto;
+}
+.zone{
+    margin:10px;
+    position:absolute;
+}
+
+#continentSelect{
+    background-color: rgba(10,10,10,0);
+    padding:10px;
+    color:rgb(226, 210, 66);
+    display:block;
+    margin:auto;
+    border:none;
+    border-bottom:2px solid rgb(226, 210, 66);
+}
+
+.zone button{
+    font-size:25px;
+}
+
+.zoneBox{
+    position:relative;
+}
+.zoneInfo{
+    position:absolute;
+    text-align: center;
+    opacity:0;
+    width:210px;
+    background-color:rgba(68, 29, 29, 0.9);
+    color:white;
+    top: -89px;
+    left: -64px;
+    padding:10px;
+    transition:0.3s;
+    border-radius: 5px;
+    font-size:16px;
+}
+.zone:hover .zoneInfo{
+   opacity:1;
+}
+.zone-0{  /*Durotar*/
+    bottom:42%;
+    right:20%;
+}
+.zone-1{  /*Elwynn forest*/
+    bottom: 65%;
+    right: 51%;
+}
+.zone-2{  /*Barrens*/
+    bottom:25%;
+    right:40%;
+}
+.zone-3{ /*Westfall*/
+    bottom: 47%;
+    right: 68%;
+}
+.zone-4{ /*Stonetalon Mountains*/
+    bottom: 50%;
+    right: 58%;
+}
+.zone-5{ /*Redridge Mountain*/
+    bottom: 64%;
+    right: 23%;
+}
+.zone-6{ /*Ashenvale*/    
+    bottom: 66%;
+    right: 40%;
+}
+.zone-7{ /*Redridge Mountain*/
+    bottom: 40%;
+    right: 44%;
+}
+
+
+
+@media screen and (max-width: 991px) {
+    
+    .zone button{
+        font-size:20px;
+    }
+}

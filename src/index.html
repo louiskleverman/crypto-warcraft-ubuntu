@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="./images/wowicon.png">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Crypto Warcraft</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/warcraft.css" rel="stylesheet">
+    <link href="css/createAccount.css" rel="stylesheet">
+    <link href="css/account.css" rel="stylesheet">
+    <link href="css/zonePositions.css" rel="stylesheet">
+    <link href="css/modal.css" rel="stylesheet">
+    <link href="css/admin.css" rel="stylesheet">
+    <link href="css/status.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="banner">
+      <div class="contract-status">
+        Contract is : <span class="status"></span>
+      </div>
+      <div id="banner-box">
+        <h1>Crypto Warcraft</h1>
+        <p>The Ethereum game</p>
+      </div>
+    </div>
+    <div class="container">
+      
+      <div id="results">
+
+      </div>
+    </div>
+
+    <!--Account template-->
+    <div id="displayAccount" class="hide">
+      <div class="row displayAccount">
+        <div class="userBalance"><i class="fas fa-dollar-sign"></i> <span class="userCurrentBalance"></div>
+        <!--Account character list-->
+        <div class="col-md-3" > 
+          <h3>Character List</h3>
+          <div class="charList">
+          </div>
+          <button class="button" data-toggle="modal" data-target="#buyNewCharacterModal">Buy new character ($ <span class="charCost"></span>)</button>
+        </div>
+
+        <div class="col-md-9">
+          <h3>Character Info</h3>
+          <div class="charInfo">
+
+            <div class="timer"><i class="fas fa-clock"></i> <span class="timeLeft"></span></div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <img class="factionImg" src="./images/alliancelogo2.png"/>
+
+                <div class="character-part-1">
+                  <p class="charInfoName"></p>
+                  <p><span class="charInfoDna"></span></p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="character-part-2">
+                  <p>lvl.<span class="charInfoLevel"></span> <span class="charInfoRace"></span></p>   
+                  <p>  exp : 
+                    <span class="charInfoExp"></span>/
+                    <span class="charInfoExpToLevel"></span>(
+                    <span class="charInfoExpPercent"></span>%)
+                  </p>
+                </div>
+              </div>
+
+              <div class="float-right characterImage">
+                <img class="charImage">
+                <img class="classImage">
+              </div>
+
+              <div class="clearfix"></div>
+            </div>
+
+          </div>
+
+          <h3>Questing map</h3>
+          <select id="continentSelect" onclick="App.selectZone()">
+            <option value="0">Kalimdor</option>
+            <option value="1">Eastern Kingdoms</option>
+          </select>
+          <div class="questMap">
+            <img/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--Zone template-->
+    <div id="zoneTemplate" class="hide">
+      <div class="zone">
+        <div class="zoneBox">
+          <div class="zoneInfo">
+            <div><span class="zoneName"></span> (lvl req. <span class="zoneLevel"></span>)</div>
+            <p>  
+              <i class="fas fa-hand-holding-usd"></i> <span class="zoneCurrencyReward"></span>
+              &nbsp;&nbsp;exp.<span class="zoneExp"></span> (<span class="zoneSuccessRate"></span>%)
+            </p>
+          </div>
+          <button class="zoneSelect btn" onclick="App.questInZone(this)">Quest</button>
+        </div>
+      </div>
+    </div>
+
+    <!--character template-->
+    <div id="characterTemplate" class="hide">
+      <div class="character">
+        <div class="float-left"><span class="characterName"></span> (lvl.<span class="characterLevel"></span>)</div>
+        <button class=" float-right characterSelect btn btn-info" onclick="App.loadCharacter(this.value)">Select</button>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+
+    <!--Account creation template-->
+    <div id="createAccount" class="hide">
+      <div class="createAccount">
+        
+        <h3>Choose Your character's faction</h3>
+        <div class="row chooseFaction">
+          <div class="col-md-6 faction alliance" onclick="App.chooseFaction(this,0)"><img src="./images/alliance.png"/></div>
+          <div class="col-md-6 faction horde" onclick="App.chooseFaction(this,1)"><img src="./images/horde.png"/></div>
+        </div>
+
+        <h3>Character Name</h3>
+        <input id="inputName" type="text" placeholder="Character Name"/>
+        <input id="inputFaction" type="number" class="hide"/>
+        <button class="button" onclick="App.createAccount()">Create</button>
+
+      </div>
+    </div>
+
+    
+    <!--Admin page template-->
+    <div id="adminPage" class="hide">
+        <div class="admin">
+
+          
+          <h3>Game pausable</h3>
+          <p>The game is paused : <span class="ispaused"></span></p>
+          <div class="adminPause row">
+            
+            <div class="col-md-6">
+              <h4>Pause game</h4>
+              <button onclick="App.pauseGame()" class="btn pause button">Pause</button>
+            </div>
+
+            <div class="col-md-6">
+              <h4>Unpause game</h4>
+              <button onclick="App.unpauseGame()" class="btn unpause button">Unpause</button>
+            </div>
+
+          </div>
+
+          <h3>Overall Information</h3>
+          <div class="adminInfo row">
+
+            <div class="col-md-4">
+              <h4>Tokens left</h4>
+              <p class="adminInfo-tokens"></p>
+            </div>
+            <div class="col-md-4">
+              <h4>Amount of characters live</h4>
+              <p class="adminInfo-characters"></p>
+            </div>
+            <div class="col-md-4">
+              <h4>Amount of zones</h4>
+              <p class="adminInfo-zones"></p>
+            </div>
+
+          </div>
+
+          <div class="adminFunctions row">
+
+            <div class="col-md-4">
+              <h4>Change Random Character Cost</h4>
+              <p>Current amount : <span class="adminInfo-cost"></span></p>
+              <input type="number" id="inputNewCharacterCost" placeholder="New cost"/>
+
+              <button class="button" onclick="App.changeRandomCharacterCost()">Modify</button>
+            </div>
+            <div class="col-md-4">
+              <h4>Change Zone Downtime</h4>
+              <p>Current downtime : <span class="adminInfo-downtime"></span></p>
+              <input type="number" id="inputZoneDowntime" placeholder="New zone donwtime"/>
+
+              <button class="button" onclick="App.changeZoneDowntime()">Modify</button>
+            </div>
+            <div class="col-md-4">
+              <h4>Add New Zone</h4>
+              
+              <input type="text" id="inputNewZoneName" placeholder="Zone name"/>
+              <input type="number" id="inputNewZoneLvl" placeholder="Zone level"/>
+              <input type="number" id="inputNewZoneSuccessRate" placeholder="Zone Success Rate"/>
+              <input type="number" id="inputNewZoneExp" placeholder="Zone Exp"/>
+              <input type="number" id="inputNewZoneContinent" placeholder="Zone Continent"/>
+              <input type="number" id="inputNewZoneReward" placeholder="Zone Reward"/>
+
+              <button class="button" onclick="App.createNewZone()">Create</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+   
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+
+
+    <div class="modal fade" id="buyNewCharacterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+
+            <div class="createCharacter">
+      
+              <h3>Choose Your character's faction</h3>
+              <div class="row chooseFaction">
+                <div class="col-md-6 faction alliance" onclick="App.chooseFactionBuy(this,0)"><img src="./images/alliance.png"/></div>
+                <div class="col-md-6 faction horde" onclick="App.chooseFactionBuy(this,1)"><img src="./images/horde.png"/></div>
+              </div>
+      
+              <h3>Character Name</h3>
+              <input id="buyInputName" type="text" placeholder="Character Name"/>
+              <input id="buyInputFaction" type="number" class="hide"/>
+              <button class="button" onclick="App.buyNewCharacter()">Create</button>
+      
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+  
+              <div class="information">
+                <!--img class="information-backgroundimage"/-->
+                <img class="information-image"/>
+                <span class="information-text"></span>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="transactionModal" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+  
+              <div class="transactionModal">
+                <img class="transactionModal-image"/>
+                <span class="transactionModal-title"></span>
+                <span class="transactionModal-text"></span>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+  </body>
+</html>

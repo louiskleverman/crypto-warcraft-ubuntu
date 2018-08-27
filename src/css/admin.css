@@ -1,0 +1,43 @@
+.admin{
+    margin-top:20px;
+    margin-bottom:20px;
+
+    padding:20px;
+    padding-top:30px;
+    font-family: liteCraft;
+    font-size:1.5em;
+    border:2px solid rgb(30,30,30);
+
+    background-image: url(../images/pattern3.jpg);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    color:rgb(236, 236, 236);
+    border-radius:10px;
+    position:relative;
+    text-align:center;
+}
+
+.admin input{
+    background-color:rgba(10,10,10,0);
+    color:rgb(204, 194, 102);
+    border:none;
+    border-bottom: 2px solid rgb(204, 194, 102);
+    display:block;
+    margin:10px auto;
+    font-size:20px;
+    font-family: liteCraft;
+}
+
+.admin input:focus{
+    outline:0px !important;
+    -webkit-appearance:none;
+}
+
+h4{
+    text-align: center;
+    font-family: liteCraft;
+    font-size:30px;
+    color:rgb(204, 194, 102);
+ }
+ 

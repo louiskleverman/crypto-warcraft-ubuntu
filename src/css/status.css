@@ -1,0 +1,14 @@
+.contract-satus{
+    position:absolute;
+    top:10px;
+    left:10px;
+}
+.status{
+    font-weight:bold;
+}
+.status.on{
+    color:rgb(123, 204, 2);
+}
+.status.off{
+    color:rgb(185, 10, 10);
+}

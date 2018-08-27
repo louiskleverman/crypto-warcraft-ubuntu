@@ -20,7 +20,7 @@ You will need ganache to run a local blockchain to run the game on.
 
 Once you pull the git use the following function to download the dependencies :
 ```
-npm install package.json
+npm install
 ```
 
 To launch the game is simple. You must first launch Ganache-Cli or Ganache and copy the Mnemonics  seed and open your MetaMask with the seed in order to access the private block-chain. This is so your metamask references the accounts on ganache-cli.

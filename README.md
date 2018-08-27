@@ -19,6 +19,7 @@ You will need ganache to run a local blockchain to run the game on. You can eith
 ## Versions
 I have initially made the project on windows 10 and on ubuntu 16.0.4. The windows 10 version works on Ubuntu 18+ and on windows 10, but for the 
 windows project : https://github.com/louiskleverman/crypto-warcraft
+
 Ubuntu 16.0.4 project : https://github.com/louiskleverman/crypto-warcraft-ubuntu
 
 You can also access the Rinkeby version of the game through IPFS on the following link : 
